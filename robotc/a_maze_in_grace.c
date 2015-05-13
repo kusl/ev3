@@ -55,7 +55,6 @@ void GoBackFull()
 			setMotorSpeed(RightTire, 0);
 			setMotorSpeed(LeftTire, 0);
 			setMotorSpeed(RightTire, -10);
-			//	setMotorSpeed(LeftTire, -4);
 			while(SensorValue[RightColor] > 2)
 			{
 
@@ -68,7 +67,6 @@ void GoBackFull()
 			setMotorSpeed(RightTire, 0);
 			setMotorSpeed(LeftTire, 0);
 			setMotorSpeed(LeftTire, -10);
-			//setMotorSpeed(RightTire, -4);
 			while(SensorValue[LeftColor] > 2)
 			{
 
@@ -99,7 +97,6 @@ bool checkforred()
 	{
 		GoBackFull();
 		DriveIn();
-		// TakeOnMe();
 		// i won
 		GoBackFull();
 		win = true;
@@ -628,16 +625,6 @@ void Maze(int r, int c, int direct)
 	if(!goLeft  && !goRight && !goStraight)
 	{
 		allSpaces();
-		//go backwards
-		//if(r == 0 && c == 0)
-		//{
-
-		//}
-		//else
-		//{
-		//	GoBackFull();
-		//	sleep(100);
-		//}
 	}
 }
 
