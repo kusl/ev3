@@ -11,6 +11,8 @@ bool win;
 bool spaces = false;
 void DriveIn();
 
+int int_sleep_timer = 100;
+
 void allSpaces()
 {
 	for(int x = 0; x < 7; x++)
@@ -41,7 +43,7 @@ void GoBack()
 	{
 
 	}
-	sleep(100);
+	sleep(int_sleep_timer);
 }
 void GoBackFull()
 {
@@ -80,7 +82,7 @@ void GoBackFull()
 			setMotorSpeed(LeftTire, 0);
 		}
 	}
-	sleep(100);
+	sleep(int_sleep_timer);
 	GoBack();
 }
 
@@ -92,7 +94,7 @@ bool checkforred()
 	while(getMotorRunning(LeftTire))
 	{
 	}
-	sleep(100);
+	sleep(int_sleep_timer);
 	if(SensorValue[LeftColor] == 5 && SensorValue[RightColor] == 5)
 	{
 		GoBackFull();
@@ -328,7 +330,7 @@ void TurnRight()
 	}
 	setMotorSpeed(LeftTire, 0);
 	setMotorSpeed(RightTire, 0);
-	sleep(100);
+	sleep(int_sleep_timer);
 }
 
 void TurnLeft()
@@ -343,7 +345,7 @@ void TurnLeft()
 	}
 	setMotorSpeed(LeftTire, 0);
 	setMotorSpeed(RightTire, 0);
-	sleep(100);
+	sleep(int_sleep_timer);
 }
 
 void checkLeft(int r, int c,int direct,bool &goLeft)
@@ -532,7 +534,7 @@ void Maze(int r, int c, int direct)
 		{
 			tempc = c - 1;
 		}
-		sleep(100);
+		sleep(int_sleep_timer);
 		TurnLeft();
 		DriveIn();
 		Maze(tempr , tempc , direct);
@@ -568,7 +570,7 @@ void Maze(int r, int c, int direct)
 		{
 			tempc = c - 1;
 		}
-		sleep(100);
+		sleep(int_sleep_timer);
 		DriveIn();
 		Maze(tempr , tempc , direct);
 		GoBackFull();
@@ -606,7 +608,7 @@ void Maze(int r, int c, int direct)
 		{
 			tempc = c - 1;
 		}
-		sleep(100);
+		sleep(int_sleep_timer);
 		TurnRight();
 		DriveIn();
 		Maze(tempr,tempc,direct);
